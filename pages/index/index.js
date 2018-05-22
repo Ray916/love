@@ -6,7 +6,7 @@ const context = wx.createCanvasContext('love');
 var winWidth = wx.getSystemInfoSync().windowWidth;
 var winHeight = wx.getSystemInfoSync().windowHeight;
 var originX = winWidth / 2;
-var originY = 100;
+var originY = 150;
 
 Page({
   data: {
@@ -25,8 +25,9 @@ Page({
     context.stroke();
     context.setLineWidth(1);
     context.moveTo(originX, 10);
-    context.lineTo(originX, 500);
+    context.lineTo(originX, 400);
     context.stroke();
+    context.draw();
 
     //r=a(1-sinθ)
     var num = 100;
@@ -39,15 +40,14 @@ Page({
       let x = r * Math.cos(theta) + originX;
       let y = originY - r * Math.sin(theta);
 
-      context.setStrokeStyle("#000000");
+      context.setStrokeStyle("#ff0000");
       context.setLineWidth(1);
       context.moveTo(lastx, lasty);
       context.lineTo(x, y);
       context.stroke();
-
       lastx = x;
       lasty = y;
     }
-    context.draw();
+    context.draw(true);
   }
 })
