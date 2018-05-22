@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view>
+  <view style="text-align:center">{{ formula }}</view>
+  <canvas  style="width: 100vw; height: 100vw;" canvas-id='love'></canvas>
+</view>
